@@ -1,15 +1,12 @@
 # Projeto do ZOOM feito durante o JS Expert Week 2.0
 
-- Acesse o [home](./pages/home/index.html) para acessar a home page
-- Acesse o [room](./pages/room/index.html) uma room específica
-
 ## Home Page
 
-![home page](./prints/home.png)
+![home page](./assets/home.png)
 
 ## Room
 
-![room](./prints/room.png)
+![room](./assets/room.png)
 
 ### Créditos
 

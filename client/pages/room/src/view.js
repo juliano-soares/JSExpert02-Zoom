@@ -20,8 +20,9 @@ class View {
     return video
   }
 
-  renderVideo({stream= null, url = null}){
+  renderVideo({stream= null, url = null, url = null, isCurrentId = false}) {
     const video = this.createVideoElement({src: url, srcObject: stream})
+    this.appendToHTMLTree(userId, video, isCurrentId)
   }
 
   appendToHTMLTree(userId, video) {
@@ -33,5 +34,6 @@ class View {
     div2.innerText = isCurrentId? '' : userId
 
     const videoGrid = document.getElementById('video-grid')
+    videoGrid.append(div)
   }
 }

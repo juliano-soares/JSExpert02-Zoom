@@ -13,9 +13,20 @@ const onload = () => {
   const room = urlParams.get('room');
   console.log('this is the room', room)
 
-  const recorderBtn = document.getElementById('record')
-  recorderBtn.addEventListener('click', recordClick(recorderBtn))
+  //const recorderBtn = document.getElementById('record')
+  //recorderBtn.addEventListener('click', recordClick(recorderBtn))
+  const socket = 'http://localhost:3000'
+  const socketBuilder = new SocketBuilder({socketUrl})
+  const view = new Video()
+  const media = new Media()
+  const deps = {
+    view,
+    media,
+    room,
+    socketBuilder
+  }
 
+  Business.initialize(deps)
 }
 
 window.onload = onload
