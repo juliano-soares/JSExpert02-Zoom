@@ -15,15 +15,28 @@ const onload = () => {
 
   //const recorderBtn = document.getElementById('record')
   //recorderBtn.addEventListener('click', recordClick(recorderBtn))
-  const socket = 'http://localhost:3000'
+  const socketUrl = 'http://localhost:3000'
   const socketBuilder = new SocketBuilder({socketUrl})
+
+  const peerConfig = Object.values({
+    id: undefined,
+    config: {
+      port: 9000,
+      host: 'localhost',
+      path: '/'
+    }
+  })
+
+  const peerBuilder = new PeerBuilder({peerConfig})
+
   const view = new Video()
   const media = new Media()
   const deps = {
     view,
     media,
     room,
-    socketBuilder
+    socketBuilder,
+    peerBuilder
   }
 
   Business.initialize(deps)
